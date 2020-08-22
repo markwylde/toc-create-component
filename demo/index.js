@@ -5,6 +5,10 @@ window.addEventListener('DOMContentLoaded', () => {
     return require('./engines/hyperscript');
   }
 
+  if (url.searchParams.get('engine') === 'vhtml') {
+    return require('./engines/vhtml');
+  }
+
   if (url.searchParams.get('engine') === 'minthril') {
     return require('./engines/minthril');
   }
@@ -15,6 +19,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
   if (url.searchParams.get('engine') === 'fastn') {
     return require('./engines/fastn');
+  }
+
+  if (url.searchParams.get('engine') === 'preact') {
+    return require('./engines/preact');
+  }
+
+  if (url.searchParams.get('engine') === 'inferno') {
+    return require('./engines/inferno');
   }
 
   window.location.href = '?engine=hyperscript';

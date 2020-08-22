@@ -1,7 +1,7 @@
 {
-  "name": "toc-form-demo",
+  "name": "toc-create-component-demo",
   "version": "1.0.0",
-  "description": "An example of using minthril",
+  "description": "An example of using the toc-create-component library and different engines",
   "main": "index.js",
   "scripts": {
     "build": "node_modules/.bin/browserify -g uglifyify ./index.js --noparse clone > ./index.bundle.js",
@@ -28,9 +28,16 @@
     "watchify": "^3.11.1"
   },
   "dependencies": {
+    "beautify": "0.0.8",
+    "escape-html": "^1.0.3",
     "fastn": "^2.14.4",
     "hyperscript": "^2.0.2",
+    "inferno": "^7.4.3",
+    "inferno-create-element": "^7.4.3",
+    "js-beautify": "^1.13.0",
+    "preact": "^10.4.7",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "vhtml": "^2.2.0"
   }
 }
