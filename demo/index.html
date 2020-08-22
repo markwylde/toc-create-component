@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Demo of toc-form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link href="/style.css" rel="stylesheet">
+
+    <script src="/index.bundle.js"></script>
+  </head>
+
+  <body>
+    <h2>Supported Engines</h2>
+    <ul class="menu">
+      <li>
+        <a href="?engine=hyperscript">HyperScript</a>
+      </li>
+      <li>
+        <a href="?engine=minthril">Minthril</a>
+      </li>
+      <li>
+        <a href="?engine=fastn">Fastn</a>
+      </li>
+      <li>
+        <a href="?engine=react">React</a>
+      </li>
+    </ul>
+  
+    <script>
+      const url = new URL(window.location.href)
+      document.querySelectorAll('.menu a').forEach(element => {
+        const linkUrl = new URL(element.href, window.location.origin)
+        if (url.searchParams.get('engine') === linkUrl.searchParams.get('engine')) {
+          element.classList.add('active')
+        } else {
+          element.classList.remove('active')
+        }
+      })
+    </script>
+
+    <h2>Demo</h2>
+    <app></app>
+  </body>
+</html>
